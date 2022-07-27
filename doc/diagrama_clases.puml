@@ -1,4 +1,4 @@
-@startuml
+@startuml "Diagrama de Clases"
 
 class Corrientazo {
     Integer precio
@@ -47,14 +47,14 @@ enum EstadoPedido {
 
 Mesa "1" o-right- "*" Pedido
 
-Corrientazo -- "1" OpcionPrincipio
-Corrientazo -- "1" OpcionSopa
-Corrientazo -- "1" OpcionCarne
-Corrientazo -- "0..1" OpcionEnsalada
-Corrientazo -- "1" OpcionJugo
+Corrientazo "*" -- "1" OpcionSopa
+Corrientazo "*" -- "1" OpcionPrincipio
+Corrientazo "*" -- "1" OpcionCarne
+Corrientazo "*" -- "0..1" OpcionEnsalada
+Corrientazo "*" -- "1" OpcionJugo
 
-Pedido *-- Corrientazo
-Pedido *-- "0..*" Adicional
+Pedido "1..*" *-- "1" Corrientazo
+Pedido "*" *-- "0..*" Adicional
 
 Pedido .right.> EstadoPedido
 
