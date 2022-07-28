@@ -26,3 +26,49 @@ CREATE TABLE PedidoAdicional (
   CONSTRAINT PedidoAdicional_Pedido_FK FOREIGN KEY (id_pedido) REFERENCES Pedido (id),
   CONSTRAINT PedidoAdicional_Adicional_FK FOREIGN KEY (id_adicional) REFERENCES Adicional (id)
 );
+
+CREATE TABLE OpcionSopa (
+    id INTEGER PRIMARY KEY,
+    nombre VARCHAR(100),
+    CONSTRAINT OpcionSopa_nombre_UQ UNIQUE(nombre)
+);
+
+CREATE TABLE OpcionPrincipio (
+    id INTEGER PRIMARY KEY,
+    nombre VARCHAR(100),
+    CONSTRAINT OpcionPrincipio_nombre_UQ UNIQUE(nombre)
+);
+
+CREATE TABLE OpcionCarne (
+    id INTEGER PRIMARY KEY,
+    nombre VARCHAR(100),
+    CONSTRAINT OpcionCarne_nombre_UQ UNIQUE(nombre)
+);
+
+CREATE TABLE OpcionEnsalada (
+    id INTEGER PRIMARY KEY,
+    nombre VARCHAR(100),
+    CONSTRAINT OpcionEnsalada_nombre_UQ UNIQUE(nombre)
+);
+
+CREATE TABLE OpcionJugo (
+    id INTEGER PRIMARY KEY,
+    nombre VARCHAR(100),
+    CONSTRAINT OpcionJugo_nombre_UQ UNIQUE(nombre)
+);
+
+CREATE TABLE Corrientazo (
+    id_pedido INTEGER PRIMARY KEY,
+    precio INTEGER,
+    id_sopa INTEGER,
+    id_principio INTEGER,
+    id_carne INTEGER,
+    id_ensalada INTEGER,
+    id_jugo INTEGER,
+    CONSTRAINT Corrientazo_id_pedido_FK FOREIGN KEY(id_pedido) REFERENCES Pedido(id),
+    CONSTRAINT Corrientazo_id_sopa_pedido_FK FOREIGN KEY(id_sopa) REFERENCES OpcionSopa(id),
+    CONSTRAINT Corrientazo_id_principio_pedido_FK FOREIGN KEY(id_principio) REFERENCES OpcionPrincipio(id),
+    CONSTRAINT Corrientazo_id_carne_pedido_FK FOREIGN KEY(id_carne) REFERENCES OpcionCarne(id),
+    CONSTRAINT Corrientazo_id_Ensalada_pedido_FK FOREIGN KEY(id_ensalada) REFERENCES OpcionEnsalada(id),
+    CONSTRAINT Corrientazo_id_jugo_pedido_FK FOREIGN KEY(id_jugo) REFERENCES OpcionJugo(id)
+);
