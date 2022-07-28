@@ -25,6 +25,7 @@ public class Mesa {
 
     public Integer calcularValor() {
         var total = pedidos.stream()
+                .filter(pedido -> pedido.getEstado() == EstadoPedido.PENDIENTE_COBRAR)
                 .map(pedido -> pedido.calcularValor())
                 .reduce((a, b) -> a + b)
                 .orElse(0);
