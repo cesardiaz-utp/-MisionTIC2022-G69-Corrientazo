@@ -1,5 +1,6 @@
 package co.edu.utp.misiontic.cesardiaz.vista;
 
+import java.sql.SQLException;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -31,7 +32,7 @@ public class MesaVista {
         mesas.forEach(System.out::println);
     }
 
-    public Mesa consultarMesa() {
+    public Mesa consultarMesa() throws SQLException {
         System.out.println(".: CONSULTANDO MESAS :.");
 
         var mesas = controlador.getMesas();

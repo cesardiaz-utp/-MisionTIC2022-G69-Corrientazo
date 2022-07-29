@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Mesa {
+    private Integer id;
     private String numero;
     private List<Pedido> pedidos;
 
@@ -11,6 +12,14 @@ public class Mesa {
         this.numero = numero;
 
         this.pedidos = new ArrayList<>();
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNumero() {
