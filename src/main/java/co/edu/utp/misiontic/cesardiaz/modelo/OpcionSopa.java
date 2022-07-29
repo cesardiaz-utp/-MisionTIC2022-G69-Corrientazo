@@ -11,4 +11,9 @@ public class OpcionSopa {
         return nombre;
     }
 
+    @Override
+    public String toString() {
+        return getNombre();
+    }
+
 }
