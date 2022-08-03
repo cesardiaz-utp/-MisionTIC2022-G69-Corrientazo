@@ -11,6 +11,7 @@ public class Pedido {
     private Corrientazo almuerzo;
     private EstadoPedido estado;
     private List<Adicional> adicionales;
+    private Integer id;
 
     public Pedido(String cliente, Corrientazo almuerzo) {
         this.cliente = cliente;
@@ -18,6 +19,14 @@ public class Pedido {
 
         estado = SIN_ENTREGAR;
         adicionales = new ArrayList<>();
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public void setAlmuerzo(Corrientazo almuerzo) {
@@ -34,6 +43,10 @@ public class Pedido {
 
     public EstadoPedido getEstado() {
         return estado;
+    }
+
+    public void setEstado(EstadoPedido estado) {
+        this.estado = estado;
     }
 
     public void entregarPedido() {

@@ -1,5 +1,6 @@
 package co.edu.utp.misiontic.cesardiaz.vista;
 
+import java.sql.SQLException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -24,10 +25,10 @@ public class PedidoVista {
         this.controlador = controlador;
     }
 
-    public Pedido pedirInformacionPedido() {
+    public Pedido pedirInformacionPedido() throws SQLException {
         System.out.println(".: INGRESANDO EL PEDIDO :.");
 
-        System.out.println("Ingrese nombre (descripcion) del cliente: ");
+        System.out.print("Ingrese nombre (descripcion) del cliente: ");
         var cliente = sc.nextLine();
 
         var sopa = elegirOpcionSopa();
@@ -44,7 +45,7 @@ public class PedidoVista {
         System.out.println(mensaje);
     }
 
-    private OpcionSopa elegirOpcionSopa() {
+    private OpcionSopa elegirOpcionSopa() throws SQLException {
         System.out.println(".: ELIJA SOPA :.");
 
         var opciones = controlador.getSopas();
@@ -72,7 +73,7 @@ public class PedidoVista {
         return respuesta;
     }
 
-    private OpcionPrincipio elegirOpcionPrincipio() {
+    private OpcionPrincipio elegirOpcionPrincipio() throws SQLException {
         System.out.println(".: ELIJA PRINCIPIO :.");
 
         var opciones = controlador.getPrincipios();
@@ -100,7 +101,7 @@ public class PedidoVista {
         return respuesta;
     }
 
-    private OpcionCarne elegirOpcionCarne() {
+    private OpcionCarne elegirOpcionCarne() throws SQLException {
         System.out.println(".: ELIJA CARNE :.");
 
         var opciones = controlador.getCarnes();
@@ -128,7 +129,7 @@ public class PedidoVista {
         return respuesta;
     }
 
-    private OpcionEnsalada elegirOpcionEnsalada() {
+    private OpcionEnsalada elegirOpcionEnsalada() throws SQLException {
         System.out.println(".: ELIJA ENSALADA :.");
 
         var opciones = controlador.getEnsaladas();
@@ -159,7 +160,7 @@ public class PedidoVista {
         return respuesta;
     }
 
-    private OpcionJugo elegirOpcionJugo() {
+    private OpcionJugo elegirOpcionJugo() throws SQLException {
         System.out.println(".: ELIJA JUGO :.");
 
         var opciones = controlador.getJugos();

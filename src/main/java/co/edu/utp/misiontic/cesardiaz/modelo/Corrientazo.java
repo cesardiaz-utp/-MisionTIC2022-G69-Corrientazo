@@ -7,6 +7,7 @@ public class Corrientazo {
     private OpcionCarne carne;
     private OpcionEnsalada ensalada;
     private OpcionJugo jugo;
+    private Integer id;
 
     public Corrientazo(Integer precio, OpcionSopa sopa, OpcionPrincipio principio, OpcionCarne carne,
             OpcionEnsalada ensalada, OpcionJugo jugo) {
@@ -24,6 +25,14 @@ public class Corrientazo {
         this.principio = principio;
         this.carne = carne;
         this.jugo = jugo;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public Integer getPrecio() {

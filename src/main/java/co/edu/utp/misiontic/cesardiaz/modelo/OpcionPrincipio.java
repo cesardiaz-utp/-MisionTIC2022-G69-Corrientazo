@@ -2,9 +2,18 @@ package co.edu.utp.misiontic.cesardiaz.modelo;
 
 public class OpcionPrincipio {
     private String nombre;
+    private Integer id;
 
     public OpcionPrincipio(String nombre) {
         this.nombre = nombre;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public String getNombre() {

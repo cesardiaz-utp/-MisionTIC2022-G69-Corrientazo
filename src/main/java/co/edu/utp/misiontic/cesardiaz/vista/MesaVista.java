@@ -60,10 +60,9 @@ public class MesaVista {
         return respuesta;
     }
 
-    public Pedido seleccionePedido(Mesa mesa) {
+    public Pedido seleccionePedido(List<Pedido> opciones) {
         System.out.println(".: ELIJA EL PEDIDO :.");
 
-        var opciones = mesa.getPedidos();
         Pedido respuesta = null;
         do {
             try {
@@ -108,8 +107,7 @@ public class MesaVista {
         System.out.println(mensaje);
     }
 
-    public void mostrarPedidos(Mesa mesa) {
-        var opciones = mesa.getPedidos();
+    public void mostrarPedidos(List<Pedido> opciones) {
         System.out.println("Las pedidos son:");
         for (int i = 0; i < opciones.size(); i++) {
             System.out.printf(" %d -> %s %n", (i + 1), opciones.get(i));
